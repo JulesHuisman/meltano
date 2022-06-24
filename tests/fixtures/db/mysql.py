@@ -41,12 +41,15 @@ def engine_uri():
     password = os.getenv("MYSQL_PASSWORD")
     database = os.getenv("MYSQL_DB", "pytest_meltano")
 
-    # create the database
-    engine_uri = create_connection_url(host, port, user, password, database)
-    engine = create_engine(engine_uri, isolation_level="AUTOCOMMIT")
+    # Recreate the database using the master database
+    master_engine_uri = create_connection_url(host, port, user, password, "mysql")
+    engine = create_engine(master_engine_uri, isolation_level="AUTOCOMMIT")
     recreate_database(engine, database)
 
-    return str(engine_uri)
+    # Connect to the database where the tests will be run
+    testing_engine_uri = create_connection_url(host, port, user, password, database)
+
+    return str(testing_engine_uri)
 
 
 @pytest.fixture()
