@@ -29,6 +29,9 @@ def create_connection_url(host: str, port: int, user: str, password: str, databa
         host=host,
         port=port,
         database=database,
+        query={
+            "charset": "utf8"
+        }
     )
 
     return connection_url
