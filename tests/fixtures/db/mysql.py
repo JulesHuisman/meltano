@@ -13,7 +13,7 @@ def recreate_database(engine, db_name):
     Drop & Create a new database.
     """
     with contextlib.suppress(sa.exc.ProgrammingError):
-        engine.execute(text(f"DROP DATABASE {db_name}"))
+        engine.execute(text(f"DROP DATABASE IF EXISTS {db_name}"))
 
     with contextlib.suppress(sa.exc.ProgrammingError):
         engine.execute(text(f"CREATE DATABASE {db_name}"))
