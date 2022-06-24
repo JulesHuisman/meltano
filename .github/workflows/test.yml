@@ -12,17 +12,17 @@ jobs:
     strategy:
       matrix:
         include:
-        - { python-version: "3.7", os: "ubuntu-latest", backend-db: sqlite }
-        - { python-version: "3.8", os: "ubuntu-latest", backend-db: sqlite }
+        # - { python-version: "3.7", os: "ubuntu-latest", backend-db: sqlite }
+        # - { python-version: "3.8", os: "ubuntu-latest", backend-db: sqlite }
         - { python-version: "3.9", os: "ubuntu-latest", backend-db: sqlite }
-        - { python-version: "3.7", os: "ubuntu-latest", backend-db: postgresql }
-        - { python-version: "3.8", os: "ubuntu-latest", backend-db: postgresql }
+        # - { python-version: "3.7", os: "ubuntu-latest", backend-db: postgresql }
+        # - { python-version: "3.8", os: "ubuntu-latest", backend-db: postgresql }
         - { python-version: "3.9", os: "ubuntu-latest", backend-db: postgresql }
-        - { python-version: "3.7", os: "ubuntu-latest", backend-db: mssql }
-        - { python-version: "3.8", os: "ubuntu-latest", backend-db: mssql }
+        # - { python-version: "3.7", os: "ubuntu-latest", backend-db: mssql }
+        # - { python-version: "3.8", os: "ubuntu-latest", backend-db: mssql }
         - { python-version: "3.9", os: "ubuntu-latest", backend-db: mssql }
-        - { python-version: "3.7", os: "ubuntu-latest", backend-db: mysql }
-        - { python-version: "3.8", os: "ubuntu-latest", backend-db: mysql }
+        # - { python-version: "3.7", os: "ubuntu-latest", backend-db: mysql }
+        # - { python-version: "3.8", os: "ubuntu-latest", backend-db: mysql }
         - { python-version: "3.9", os: "ubuntu-latest", backend-db: mysql }
       fail-fast: false
 

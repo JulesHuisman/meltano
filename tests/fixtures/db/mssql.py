@@ -27,17 +27,17 @@ def create_connection_url(host: str, port: int, user: str, password: str, databa
     Create a MSSQL connection URL for the given parameters.
     """
     connection_url = sa.engine.URL.create(
-        "mssql+pyodbc",
+        "mssql+pymssql",
         username=user,
         password=password,
         host=host,
         port=port,
         database=database,
-        query={
-            "driver": "ODBC Driver 18 for SQL Server",
-            "LongAsMax": "Yes",
-            "TrustServerCertificate": "Yes",
-        },
+        # query={
+        #     "driver": "ODBC Driver 18 for SQL Server",
+        #     "LongAsMax": "Yes",
+        #     "TrustServerCertificate": "Yes",
+        # },
     )
 
     return connection_url
